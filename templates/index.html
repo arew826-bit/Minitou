@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiang Mai — One Day Mini Tour Trip</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #FDFBF7;
+            --card-bg: #FFFFFF;
+            --text-primary: #2C2A29;
+            --text-secondary: #6E6862;
+            --accent-color: #8B5A2B;
+            --border-color: #E6E1DA;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Prompt', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header Vintage Magazine Style */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .issue-tag {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        header p.subtitle {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Locations List (Magazine Editorial Layout) */
+        .location-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 90px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .location-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .location-card:nth-child(even) .card-content {
+            direction: ltr;
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            filter: sepia(15%) contrast(102%);
+            transition: transform 0.7s ease;
+        }
+
+        .location-card:hover .card-image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .card-content {
+            padding: 20px 0;
+        }
+
+        .time-badge {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .location-title {
+            font-family: var(--font-serif);
+            font-size: 1.9rem;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .english-title {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* Vintage Custom Navigation Button */
+        .btn-navigation {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-navigation:hover {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            box-shadow: 0 5px 15px rgba(139, 90, 43, 0.2);
+        }
+
+        /* Map Section (Bottom of Page) */
+        .map-section {
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .map-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .map-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .map-container {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            background: #FFFFFF;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .map-container iframe, .map-container div {
+            border-radius: 2px;
+            width: 100%;
+            height: 500px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .location-card, .location-card:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                direction: ltr;
+            }
+            .card-image-wrapper img { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="issue-tag">Vol. 01 — One Day Experience</div>
+        <h1>Chiang Mai Mini Tour</h1>
+        <p class="subtitle">การเดินทางหนึ่งวันผ่านประวัติศาสตร์ วิถีชีวิต และความเงียบสงบในนครเชียงใหม่</p>
+    </header>
+
+    <div class="container">
+        <!-- Locations Grid / Editorial List -->
+        <main>
+            {% for item in locations %}
+            <article class="location-card" id="{{ item.id }}">
+                <div class="card-image-wrapper">
+                    <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <span class="time-badge">{{ item.time }}</span>
+                    <h2 class="location-title">{{ item.name }}</h2>
+                    <div class="english-title">{{ item.english_name }}</div>
+                    <p class="description">{{ item.description }}</p>
+                    
+                    <!-- ปุ่มนำทางไปยัง Google Maps ตามพิกัด -->
+                    <a href="https://www.google.com/maps/search/?api=1&query={{ item.lat }},{{ item.lng }}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn-navigation">
+                        <i class="fa-solid fa-location-arrow"></i> ข้อมูลเส้นทาง (Explore Route)
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </main>
+
+        <!-- Map Section (ส่วนล่างสุดของเว็บ) -->
+        <section class="map-section" id="route-map">
+            <div class="map-header">
+                <h2>Journey Route Overview</h2>
+                <p>แผนที่สรุปเส้นทางท่องเที่ยวประจำวันทั้งหมดในเชียงใหม่</p>
+            </div>
+            <div class="map-container">
+                {{ map_html | safe }}
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Chiang Mai Mini Tour. Designed with Vintage Cinematic Aesthetic.</p>
+    </footer>
+
+</body>
+</html>
